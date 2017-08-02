@@ -23,13 +23,6 @@ import java.util.ArrayList;
 @Controller
 public class HomeController {
 
-//    @RequestMapping("/")
-//
-//    public ModelAndView helloWorld() {
-//        return new
-//                ModelAndView("welcome", "message", "Hello World");
-//
-//    }
 
     @RequestMapping("/test")
     // String methods are used to show a view
@@ -43,7 +36,7 @@ public class HomeController {
         return "testing";
     }
 
-    @RequestMapping("/")
+    @RequestMapping("/") // modified this from the original demo it was originally mapped to "/listCustomers"
     public ModelAndView listCustomer() {
         ArrayList<CustomersEntity> customerList = getAllCustomers();
 
@@ -163,8 +156,7 @@ public class HomeController {
     // pass it to the new controller here to be used in a form
     // on a new page, then add the id as a hidden field and use it to
     // update the method. the actual method will be update() instead of save
-    // you'll need a new method named update form for the update to happen
-    // the code in this mapping will need to be moved
+    // you'll need a new method named updateform for the update to happen
     // I should just need the code from the add option plus the
     // update() method
     @RequestMapping("/update")
